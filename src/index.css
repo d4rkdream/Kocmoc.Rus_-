@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Космическая тема: тёмно-синий фон, серебро, синий акцент, красный */
+    --background: 222 47% 5%;
+    --foreground: 210 20% 92%;
+
+    --card: 222 40% 7%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 40% 7%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 217 91% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 30% 12%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 0 72% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 14%;
+    --input: 222 30% 14%;
+    --ring: 217 91% 56%;
+
+    --chart-1: 217 91% 60%;
+    --chart-2: 35 82% 55%;
+    --chart-3: 270 60% 50%;
+    --chart-4: 25 80% 50%;
+    --chart-5: 200 70% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 20% 92%;
+
+    --card: 222 40% 7%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 40% 7%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 217 91% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 30% 12%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 0 72% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 14%;
+    --input: 222 30% 14%;
+    --ring: 217 91% 56%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor: none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  [data-scroll-container] {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  section {
+    transform: translateZ(0);
+    will-change: transform;
+    contain: layout style paint;
+  }
+
+  button {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* Animation utilities for tailwindcss-animate compatibility */
+@layer utilities {
+  .animate-in {
+    animation-duration: 150ms;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+  }
+
+  .slide-in-from-bottom-4 {
+    --tw-enter-translate-y: 1rem;
+    animation-name: slideInFromBottom;
+  }
+
+  .slide-in-from-bottom-8 {
+    --tw-enter-translate-y: 2rem;
+    animation-name: slideInFromBottom;
+  }
+
+  .duration-700 {
+    animation-duration: 700ms;
+  }
+
+  .duration-1000 {
+    animation-duration: 1000ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(var(--tw-enter-translate-y, 1rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

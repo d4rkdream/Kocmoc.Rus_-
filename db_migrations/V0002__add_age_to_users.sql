@@ -1,0 +1,1 @@
+ALTER TABLE t_p90348729_project_zenith_2024_.users ADD COLUMN IF NOT EXISTS age INTEGER;

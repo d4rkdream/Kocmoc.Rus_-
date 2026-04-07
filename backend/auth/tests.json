@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Login with demo account",
+      "method": "POST",
+      "path": "/?action=login",
+      "body": {"email": "pilot@kosmos.ru", "password": "kosmos2026"},
+      "expectedStatus": 200,
+      "expectedBody": {},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login with wrong password",
+      "method": "POST",
+      "path": "/?action=login",
+      "body": {"email": "pilot@kosmos.ru", "password": "wrongpass"},
+      "expectedStatus": 401,
+      "bodyMatcher": "partial"
+    }
+  ]
+}
